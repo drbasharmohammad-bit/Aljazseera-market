@@ -1,0 +1,61 @@
+{
+  "entities": {
+    "Merchant": {
+      "title": "Merchant",
+      "description": "Store and merchant registration applications in Eastern Syria Marketplace",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "ownerName": { "type": "string" },
+        "city": { "type": "string" },
+        "phone": { "type": "string" },
+        "whatsapp": { "type": "string" },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "address": { "type": "string" },
+        "receipt_base64": { "type": "string" },
+        "transferReference": { "type": "string" },
+        "transferCompany": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "approved", "rejected"]
+        },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "city", "phone", "category", "status"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Marketplace listings and goods for sale",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "storeId": { "type": "string" },
+        "storeName": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "priceSyp": { "type": "number" },
+        "priceUsd": { "type": "number" },
+        "imageUrl": { "type": "string" },
+        "city": { "type": "string" },
+        "category": { "type": "string" },
+        "phone": { "type": "string" },
+        "whatsapp": { "type": "string" },
+        "isAvailable": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["storeId", "storeName", "title", "priceSyp", "city", "category", "phone"]
+    }
+  },
+  "firestore": {
+    "/merchants/{merchantId}": {
+      "schema": "Merchant",
+      "description": "Collection of store registrations with approval status and receipt data"
+    },
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Collection of active marketplace items"
+    }
+  }
+}

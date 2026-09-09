@@ -1,0 +1,7 @@
+{
+  "name": "سوق الجزيرة والفرات",
+  "description": "منصة التجارة الإلكترونية الشاملة لمحافظات الحسكة، دير الزور، والرقة - تصفح المنتجات والمتاجر والاتصال المباشر",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
